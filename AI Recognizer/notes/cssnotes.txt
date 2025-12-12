@@ -1,0 +1,99 @@
+display: flex;
+What it does: This turns on Flexbox mode.
+The Analogy: Imagine the body is a physical box. By default, items inside just stack top-to-bottom (gravity). display: flex turns off gravity and lets you control exactly where items float inside the box (left, right, center, top, bottom).
+
+You got it. Let's zoom in and focus only on the body section first.
+
+This section controls the "canvas" of your website—everything that is visible in the browser window.
+
+The Code You Typed:
+CSS
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+Line-by-Line Explanation
+1. font-family: 'Segoe UI', Tahoma...;
+What it does: Sets the font for the entire website.
+
+Why the list? This is called a "font stack." The computer tries the first one (Segoe UI). If it doesn't have it (like on a Mac), it tries the next (Tahoma), and so on. sans-serif is the backup generic style (fonts without the little feet on the letters).
+
+2. background-color: #f0f2f5;
+What it does: Sets the page background color.
+
+The Color: #f0f2f5 is a "Hex Code." It represents a very light grey-blue.
+
+Tip: Using pure white (#ffffff) as a background can be harsh on the eyes. This light grey makes the white "card" we will build later pop out more.
+
+3. display: flex;
+What it does: This turns on Flexbox mode.
+
+The Analogy: Imagine the body is a physical box. By default, items inside just stack top-to-bottom (gravity). display: flex turns off gravity and lets you control exactly where items float inside the box (left, right, center, top, bottom).
+
+Note: You won't see a change just by typing this line, but it unlocks the powers of the next two lines.
+
+4. justify-content: center;
+What it does: Centers items horizontally (Left ↔ Right).
+
+Result: Your "AI Object Recognizer" card moves from the left edge to the middle of the screen width.
+
+5. align-items: center;
+What it does: Centers items vertically (Top ↕ Bottom).
+
+The Catch: This only works if the container (the body) actually has some height. If the body is only 50px tall, "centering" it doesn't move it very far. That is why we need the next line...
+
+6. min-height: 100vh;
+What it does: This forces the body to be at least as tall as the browser window.
+
+The Math: vh = Viewport Height. 100vh = 100% of the screen height.
+
+Without this: The background would stop right below your content, and the "vertical centering" would look like it's stuck at the top.
+
+7. margin: 0;
+What it does: Removes the default white space around the edges.
+
+Why? Browsers (Chrome, Safari, etc.) add a default tiny margin (about 8 pixels) around the page. This line removes it so your background color touches the very edges of the screen.
+
+
+box-shadow: X Y Blur Color
+
+Here is the rule:
+
+The X-Axis (Left vs Right)
+
+Positive (+): Pushes the shadow to the RIGHT.
+
+Negative (-): Pushes the shadow to the LEFT.
+
+The Y-Axis (Up vs Down) — This is the tricky one!
+
+Positive (+): Pushes the shadow DOWN. (In school graphs, positive is usually up, but in CSS, we start reading from the top-left, so "down" adds pixels).
+
+Negative (-): Pushes the shadow UP.
+
+
+
+Explanation
+ul (The List Container)
+
+list-style: none: Removes the ugly black bullet points.
+
+padding: 0: Removes the default indentation so the text aligns with the left edge of your box.
+
+text-align: left: Even though your main box is centered, we want the results to read from left-to-right (standard reading direction).
+
+li (The Result Bar)
+
+display: flex + justify-content: space-between: This is the most important part. It pushes the Object Name (e.g., "Cup") to the far left and the Score (e.g., "99%") to the far right.
+
+background: white: Makes each result look like a distinct "card" or "sticker" sitting on top of your cream background.
+
+li span.prob (The Score Highlight)
+
+This targets specific text we will create in JS later (the percentage number). We make it Blue and Bold so the user's eye goes straight to the confidence score.

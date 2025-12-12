@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Object Recognizer</title> 
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+</head>
+<!-- used Tensorflow and Mobilenet -->
+<body>
+    <div class="container">
+        <h1>AI Object Recognizer</h1>
+        <p>Upload an image and the AI will guess it</p>
+        <input type="file" id="imageUpload" accept="image/*" disabled>
+        <!-- <input type="file">: This creates the "Choose File" button.
+        accept="image/*" ensures the user can only select images (not PDFs or Word docs). -->
+        <div class ="image-box">
+            <img id="imagePreview" src="#" alt="Image Preview" style="display: none;">      
+        <!--
+        <img>: This displays the image.
+        src="#": Currently empty (a placeholder).
+        style="display: none;": We hide this image initially because the user hasn't uploaded anything yet.-->
+        </div>
+        <div id="status">Loading...</div>
+        <ul id="resultList"></ul>
+        <!-- resultList is for showing the results in bullet points-->  
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

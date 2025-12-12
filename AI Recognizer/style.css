@@ -1,0 +1,106 @@
+body{
+  font-family: 'Segoe UI','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000;
+  display: flex; 
+  justify-content: center; /*for horizontal*/
+  align-items: center;     /*this and next line for vertical*/ 
+  min-height: 100vh; /*vh=viewport height*/
+  margin: 0; /*for no margin around browser*/
+}
+
+.container{
+    background: rgb(255, 255, 223);
+    padding: 2rem;
+    border-radius: 14px;
+    animation: rotate-light 3s infinite linear;
+    max-width: 400px;
+    width: 65%;
+
+}
+
+.image-box{
+    min-height:200px;
+    background: rgb(255, 255, 215); /*i will check this later*/
+    border: 2px dashed #ddd;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+img{
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    display:none;
+}
+
+h1{
+    margin-bottom: 0.5rem;
+    color:#000000;
+}
+
+p{
+    color:#1c1111;
+    margin-bottom: 1.5rem;
+}
+
+input[type="file"] {
+    font-family: 'Segoe UI', sans-serif; /* Fixes the font */
+    color: #000000; /* The text "No file chosen" */
+    margin-bottom: 20px; /* Pushes the image box down */
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    background: #000000; /* Dark grey button */
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#status{
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px
+}
+
+ul{
+    list-style: none;
+    padding: 0; 
+    text-align:left;
+}
+
+li{
+    background: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li span.prob{
+    font-weight: bold;
+    color: #190904;
+}
+
+/* When the button is disabled (loading) */
+input[type="file"]:disabled::file-selector-button {
+    background-color: #ccc; /* Grey background */
+    cursor: not-allowed;    /* Show a 'stop' symbol on mouse hover */
+    opacity: 0.6;
+}
+
+@keyframes rotate-light{
+    0% {box-shadow: -10px -10px 20px rgba(0,255,255,0.5);}
+    25% {box-shadow: 10px -10px 20px rgba(255,0,255,0.5);}
+    50% {box-shadow: 10px 10px 20px rgba(255,255,0,0.5);}
+    75% {box-shadow: -10px 10px 20px rgba(0,255,0,0.5);}
+    100%{box-shadow: -10px -10px 20px rgba(0,255,255,0.5);}
+}
